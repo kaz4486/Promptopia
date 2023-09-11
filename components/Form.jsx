@@ -58,6 +58,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </div>
       </form>
     </section>
+    // You are a professional web developer. I'm going to give you a snippet of code, and you can give me some advice on how to make it cleaner, more readable, and more efficient.
   );
 };
 
