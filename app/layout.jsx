@@ -11,6 +11,18 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
+      <head>
+        {/* <link rel='preload' href='../../styles/globals.css' as='style' />
+        <link rel='stylesheet' href='../../styles/globals.css' /> */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if(document) {
+            document.querySelectorAll("link[rel='preload'][as='style']").forEach(link => link.rel = "stylesheet")}
+            `,
+          }}
+        />
+      </head>
       <body>
         <Provider>
           <div className='main'>
