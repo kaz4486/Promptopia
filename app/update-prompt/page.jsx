@@ -27,10 +27,9 @@ const EditPrompt = () => {
   }, [promtId]);
 
   const updatePrompt = async (e) => {
-    console.log('halo');
     e.preventDefault();
     setSubmitting(true);
-    console.log('jestem tu');
+
     if (!promtId) {
       setSubmitting(false);
       return alert('Prompt ID not found');
@@ -47,7 +46,6 @@ const EditPrompt = () => {
       if (response.ok) {
         router.push('/');
       }
-      console.log('jestem tam');
     } catch (error) {
       console.log(error);
     } finally {
