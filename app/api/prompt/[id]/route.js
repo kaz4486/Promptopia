@@ -27,14 +27,11 @@ export const PATCH = async (request, { params }) => {
     await connectToDB();
 
     const existingPrompt = await Prompt.findById(params.id).populate('creator');
-    console.log('tu');
     if (!existingPrompt) return Response('Prompt not found', { status: 404 });
 
     existingPrompt.prompt = prompt;
     existingPrompt.tag = tag;
-    console.log('tam');
     await existingPrompt.save();
-    console.log('siam');
     return new Response(JSON.stringify(existingPrompt), {
       status: 200,
     });
