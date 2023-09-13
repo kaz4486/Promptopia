@@ -30,10 +30,9 @@ const Feed = () => {
     const data = await response.json();
     setPosts(data);
   };
-
   useEffect(() => {
     fetchPosts();
-  }, [posts]);
+  }, []);
 
   const filterPosts = (searchText) => {
     const regex = new RegExp(searchText, 'i');
