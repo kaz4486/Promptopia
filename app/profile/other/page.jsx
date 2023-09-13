@@ -13,7 +13,7 @@ const OtherProfile = () => {
 
   const [posts, setPosts] = useState([]);
 
-  const username = posts[0].creator.username;
+  const username = posts[0]?.creator.username;
 
   useEffect(() => {
     const fetchPosts = async () => {
