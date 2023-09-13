@@ -26,7 +26,7 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
 
   const fetchPosts = async () => {
-    const response = await fetch('/api/prompt', {
+    const response = await fetch(`/api/prompt?search=${searchText}`, {
       method: 'GET',
       headers: {
         'Cache-control': 'no-store',
@@ -37,7 +37,7 @@ const Feed = () => {
   };
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [searchText]);
 
   const filterPosts = (searchText) => {
     const regex = new RegExp(searchText, 'i');
